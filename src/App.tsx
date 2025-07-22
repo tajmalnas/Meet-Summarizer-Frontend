@@ -8,6 +8,10 @@ import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
+// src/App.js
+console.log("Testing Presubmit AI PR review");
+
+
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
