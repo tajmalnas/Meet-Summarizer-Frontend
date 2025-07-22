@@ -5,6 +5,9 @@ permissions:
   pull-requests: write
 
 on:
+  push:
+    branches:
+      - "**"  # Triggers on push to any branch
   pull_request:
   pull_request_review_comment:
     types: [created]
