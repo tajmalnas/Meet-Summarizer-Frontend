@@ -29,6 +29,7 @@ const HeroSection = () => {
               Try it now
             </Button>
             <Button 
+              onClick={() => window.open("https://github.com/tajmalnas/Meet-Summarizer-Backend", "_blank")}
               variant="outline" 
               size="lg"
               className="text-lg px-8 py-6 border-2 hover:bg-muted/50 transition-all duration-200"
