@@ -1,13 +1,11 @@
-name: Presubmit.ai
+name: Code Review
 
 permissions:
   contents: read
   pull-requests: write
-  issues: write
 
 on:
-  pull_request_target:
-    types: [opened, synchronize]
+  pull_request:
   pull_request_review_comment:
     types: [created]
 
@@ -15,14 +13,10 @@ jobs:
   review:
     runs-on: ubuntu-latest
     steps:
-      - name: Check required secrets
-        run: |
-          if [ -z "${{ secrets.LLM_API_KEY }}" ]; then
-            echo "Error: LLM_API_KEY secret is not configured"
-            exit 1
-          fi
-      - uses: presubmit/ai-reviewer@latest
+      - uses: coderabbitai/ai-pr-reviewer@latest
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
-          LLM_MODEL: "gpt-4.1"
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        with:
+          review_simple_changes: false
+          review_comment_lgtm: false
