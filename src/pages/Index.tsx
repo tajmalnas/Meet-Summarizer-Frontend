@@ -6,10 +6,12 @@ import FeaturesSection from "@/components/FeaturesSection";
 import CodeSampleSection from "@/components/CodeSampleSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import Footer from "@/components/Footer";
+import Header from "@/components/Header";
 
 const Index = () => {
   return (
     <div className="min-h-screen">
+      <Header />
       <HeroSection />
       <HowItWorksSection />
       <LiveDemoSection />
